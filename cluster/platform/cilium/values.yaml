@@ -1,0 +1,15 @@
+k8sServiceHost: api.homelab.techscene.de
+k8sServicePort: 6443
+kubeProxyReplacement: true
+ipam:
+  mode: kubernetes
+socketLB:
+  hostNamespaceOnly: true   # for Istio later
+cni:
+  exclusive: false          # for Istio later
+hubble:
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+
