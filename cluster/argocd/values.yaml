@@ -1,0 +1,49 @@
+---
+crds:
+  install: true
+  keep: true
+
+global:
+  revisionHistoryLimit: 3
+
+configs:
+  cm:
+    create: true
+    application.instanceLabelKey: argocd.argoproj.io/instance
+    timeout.reconciliation: 180s
+    exec.enabled: false
+  params:
+    create: true
+    application.namespaces: argocd
+  rbac:
+    create: true
+    policy.default: ""
+
+controller:
+  replicas: 1
+
+repoServer:
+  replicas: 1
+
+server:
+  enabled: true
+  replicas: 1
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: false
+
+redis:
+  enabled: true
+
+redis-ha:
+  enabled: false
+
+dex:
+  enabled: false
+
+notifications:
+  enabled: false
+
+commitServer:
+  enabled: false

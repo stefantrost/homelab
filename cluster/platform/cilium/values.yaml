@@ -4,12 +4,14 @@ kubeProxyReplacement: true
 ipam:
   mode: kubernetes
 socketLB:
-  hostNamespaceOnly: true   # for Istio later
+  hostNamespaceOnly: true # for Istio later
 cni:
-  exclusive: false          # for Istio later
+  exclusive: false # for Istio later
 hubble:
   relay:
     enabled: true
   ui:
     enabled: true
-
+  tls:
+    auto:
+      method: cronJob
